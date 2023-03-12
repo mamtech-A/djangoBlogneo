@@ -1,0 +1,19 @@
+body{
+    background-color: #0f121f;
+    background-image:url(stars.jpg);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+body * {
+    font-family: arial, serif;
+}
+h1, h2, h3, h4 {
+    font-weight: normal;
+    margin: 0;
+}
+a, a:hover, a:visited {
+    color: #fff;
+    text-decoration: none;
+}
