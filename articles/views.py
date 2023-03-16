@@ -38,9 +38,6 @@ def create_article(request):
             account = Person.nodes.get(name=request.user.username)
             instance.author.connect(account)
             instance.save()
-            # instance = form.save()
-            # instance.author = request.user.username
-            # instance.save()
             return redirect('articles:list')
     else:
         form = forms.CreateArticle()
