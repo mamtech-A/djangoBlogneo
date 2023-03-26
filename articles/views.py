@@ -12,10 +12,11 @@ def articles_list(request):
         author = article.author.single()
         article_data = {
             'title': article.title,
-            'content': article.body,
+            'body': article.body,
             'slug': article.slug,
             'date': article.date,
-            'author': author.name
+            'author': author.name,
+            'snippet': article.snippet()
         }
         article_list.append(article_data)
     args = {'articles': article_list}
