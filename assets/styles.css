@@ -30,19 +30,75 @@ div.wrapper h1{
 header{
     display:grid;
     grid-template-columns:1fr 1fr;
-    padding:20px 0;
+    padding:32px 0;
 }
-header nav li{
-    display:inline-block;
-    margin-left:170px;
+.topnav {
+  overflow:hidden;
 }
-header nav logout{
-    background:none;
-    color:#fff;
-    cursor:pointer;
-    border:0;
-    font-size:1em;
+.topnav a{
+    float:right;
+    color:#f2f2f2;
+    text-align:center;
+    padding:0 16px;
+    text-decoration:none;
+    font-size:17px;
 }
+.topnav .logout-button{
+  float:right;
+}
+.topnav a:hover {
+  background-color: #00bda0;
+  color: black;
+}
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+.create-article .container {
+
+}
+.site-form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  float: left;
+  width: 100%;
+  margin-top: 6px;
+}
+.site-form input[name=body]{
+  width: 100%;
+  padding-bottom:100px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  float: left;
+  width: 100%;
+  margin-top: 6px;
+}
+.site-form label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+.site-form input[type=submit] {
+  background-color: #00dba0;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 30%;
+  margin-top: 6px;
+}
+
+.site-form input[type=submit]:hover {
+  background-color: #45a049;
+}
+
 .articles{
     display:grid;
     grid-template-columns:1fr;
@@ -75,11 +131,18 @@ header nav logout{
     padding:10px 0 0 10px;
     }
 
-.article .author{
+.article .author-date{
     display:grid;
     grid-template-columns:1fr 1fr;
     background-color:#00dba0;
     color:#0f121f;
+}
+.article .author-date .date{
+  padding-left:10px;
+}
+.article .author-date .author{
+  text-align:right;
+  padding-right:10px;
 }
 .content{
     max-width:950px;

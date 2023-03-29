@@ -6,22 +6,19 @@
 
 {% block content %}
     <h1>Articles List</h1>
+    {% if user.is_authenticated %}
+        <h2><a href="{% url 'articles:create' %}">create new article</a></h2>
+        <br>
+        <br>
+    {% endif %}
     <div class="articles">
         {% for article in articles %}
             <div class="article">
                 <h2><a href="{% url 'articles:detail' slug=article.slug %}">{{ article.title }}</a></h2>
                 <p class="body">{{ article.snippet }}</p>
-                <div class="author">
-                    <nav>
-                        <ul>
-                            <li>
-                                <p>{{ article.date }}</p>
-                            </li>
-                            <li>
-                                <p>added by: {{ article.author }}</p>
-                            </li>
-                        </ul>
-                    </nav>
+                <div class="author-date">
+                    <p class="date">{{ article.date }}</p>
+                    <p class="author">added by: {{ article.author }}</p>
                 </div>
             </div>
         {% endfor %}

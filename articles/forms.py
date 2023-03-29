@@ -8,4 +8,5 @@ class CreateArticle(ModelForm):
         model = models.Article
         fields = ['title', 'slug', 'body', 'image']
 
-    image = forms.FileField(required=False)
+    image = forms.ImageField(required=False)
+    body = forms.Textarea()

@@ -3,6 +3,7 @@ from .models import Article, Person
 from . import forms
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import User
+from django.core.paginator import Paginator
 
 
 def articles_list(request):

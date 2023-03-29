@@ -15,26 +15,19 @@
 <div class="content">
     <header>
         <h2><a href="{% url 'articles:list' %}"> LOGO</a></h2>
-                {% if user.is_authenticated %}
-                    <li>
-                        <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
-                            {% csrf_token %}
-                            <button class="logout" type="submit">logout</button>
-                        </form>
-                    </li>
-                    <li>
-                        <a href="{% url 'articles:create' %}">create new article</a>
-                    </li>
-                {% else %}
-                    <li>
-                        <a href="{% url 'accounts:login' %}">login</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'accounts:signup' %}">signup</a>
-                    </li>
-                {% endif %}
-            </ul>
-        </nav>
+        <div class="topnav">
+
+            {% if user.is_authenticated %}
+                    <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+                        {% csrf_token %}
+                        <button class="logout-button" type="submit">logout</button>
+                    </form>
+            {% else %}
+                <a href="{% url 'accounts:login' %}">login</a>
+                <a href="{% url 'accounts:signup' %}">signup</a>
+            {% endif %}
+        </div>
+
     </header>
     <div class="wrapper">
         {% block content %}
@@ -42,5 +35,7 @@
         {% endblock %}
     </div>
 </div>
+<br>
+<br>
 </body>
 </html>
